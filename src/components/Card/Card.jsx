@@ -4,7 +4,7 @@ import { connect, useDispatch } from "react-redux";
 import { NavLink, useLocation } from "react-router-dom";
 import { getFavorites, removeFavorite } from "../../redux/actions";
 import styles from "./Card.module.css";
-import imageFav from "../../assets/removeFavorite.gif"
+import imageFav from "../../assets/removeFavorite.gif";
 
 function Card({ id, name, species, gender, image, onClose, myFavorites }) {
   const [isFav, setIsFav] = useState(false);
@@ -26,24 +26,21 @@ function Card({ id, name, species, gender, image, onClose, myFavorites }) {
     myFavorites.forEach((fav) => {
       if (fav.id === id) {
         setIsFav(true);
-
       }
     });
   }, [myFavorites]);
-
-
 
   //! Agregando a favoritos directamente al server
 
   const addFavorite = (character) => {
     axios
-      .post("http://localhost:3001/fav", character)
+      .post("https://rickapi.onrender.com/fav", character)
       .then((res) => console.log("Ok"));
   };
 
   const removeFavorite = async (id) => {
-    await axios.delete(`http://localhost:3001/fav/${id}`);
-    mostrarImagenFav()
+    await axios.delete(`https://rickapi.onrender.com/fav/${id}`);
+    mostrarImagenFav();
     dispatch(getFavorites());
   };
 
@@ -81,12 +78,13 @@ function Card({ id, name, species, gender, image, onClose, myFavorites }) {
       )}
       <div className={styles.cajaCard}>
         <div className={styles.cajaCardOnClick}>
-          {pathname.pathname !== "/favorites" && (<button onClick={() => onClose(id)} className={styles.cardOnClick}>
+          {pathname.pathname !== "/favorites" && (
+            <button onClick={() => onClose(id)} className={styles.cardOnClick}>
               X
             </button>
           )}
         </div>
-        
+
         <NavLink className={styles.cardInfo} to={`/detail/${id}`}>
           <h2 className={styles.cardName}>{name}</h2>
         </NavLink>
@@ -95,13 +93,14 @@ function Card({ id, name, species, gender, image, onClose, myFavorites }) {
         <img className={styles.cardImage} src={image} alt={name} />
       </div>
       {mostrarImagen && (
-        <img 
-          src={imageFav} 
-          alt="Imagen" 
-          className={`${styles.imagenAparicion} ${mostrarImagen? styles.imagenAparece : ""}`}
+        <img
+          src={imageFav}
+          alt="Imagen"
+          className={`${styles.imagenAparicion} ${
+            mostrarImagen ? styles.imagenAparece : ""
+          }`}
         />
       )}
-      
     </div>
   );
 }
