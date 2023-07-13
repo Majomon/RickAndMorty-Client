@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     !access && navigate("/");
-  }, [access]);
+  }, [access, navigate]);
 
   useEffect(() => {
     const handleBackButton = () => {
@@ -41,14 +41,14 @@ function App() {
     return () => {
       window.removeEventListener("popstate", handleBackButton);
     };
-  }, [pathname]);
+  }, [pathname, navigate]);
 
   //Credenciales de mentira
   const username = "mauri@gmail.com";
   const password = "pass1234";
 
   const onSearch = (id) => {
-    const URL_BASE = "https://rickapi.onrender.com/";
+    const URL_BASE = "https://rickapi.onrender.com";
 
     fetch(`${URL_BASE}/onsearch/${id}`)
       .then((response) => response.json())
