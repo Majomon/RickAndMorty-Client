@@ -1,0 +1,60 @@
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  margin: auto;
+  margin-top: 9rem;
+}
+
+.aboutInfo {
+  font-family: "Gorditas", cursive;
+
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(3px);
+  padding: 0.5rem;
+  padding-top: 3.5rem;
+  margin: 1rem;
+
+  position: relative;
+  border: 1px solid black;
+  border-radius: 10px;
+
+  color: rgb(0, 0, 0);
+
+  box-shadow: 1px -1px 28px 6px rgba(255, 110, 237, 1);
+  -webkit-box-shadow: 1px -1px 28px 6px rgba(255, 110, 237, 1);
+  -moz-box-shadow: 1px -1px 28px 6px rgba(255, 110, 237, 1);
+}
+.aboutImage {
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 50%;
+
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.redes {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+}
+.redes img {
+  width: 50px;
+}
+
+.iconRedes{
+    filter: grayscale(100%);
+    transition: filter 0.2s ease-in-out;
+}
+
+.iconRedes:hover{
+    fill: #6ECF79;
+}

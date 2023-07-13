@@ -1,0 +1,100 @@
+.containerNavBar {
+  background-color: rgba(77, 110, 113, 0.6);
+  box-shadow: -1px 5px 9px 4px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: -1px 5px 9px 4px rgba(0, 0, 0, 1);
+  -moz-box-shadow: -1px 5px 9px 4px rgba(0, 0, 0, 1);
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 auto;
+}
+
+.h2NavLink {
+  margin: 0;
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+}
+
+.activeImg {
+  background-image: url("../../assets/portal.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 240px;
+  border: solid rgb(0, 0, 0) 2px;
+  border-radius: 20px;
+}
+.activeLink{
+  color: rgb(37, 25, 36);
+}
+
+.containerImg {
+  width: 20%;
+  position: relative;
+  top: 1.5rem;
+  /* transform: rotate(-15deg); */
+  animation: movimiento 3s infinite linear;
+}
+
+@keyframes movimiento {
+/*   0% {
+    transform: translate(-5px, -5px) rotate(-30deg);
+  }
+  25% {
+    transform: translate(5px, 5px) rotate(20deg);
+  }
+  50% {
+    transform: translate(5px, -5px) rotate(-10deg);
+  }
+  75% {
+    transform: translate(-5px, 5px) rotate(20deg);
+  }
+  100% {
+    transform: translate(-5px, -5px) rotate(-30deg);
+  } */
+  0%{
+    transform: scale(1.1);
+  }
+  50%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(1.1);
+  }
+}
+
+.imgTitulo {
+  width: 70%;
+}
+
+.containerLinks {
+  display: flex;
+  width: 40%;
+}
+
+
+.navLink {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  z-index: 1;
+}
+
+.navLink img {
+  position: absolute;
+  width: 40px;
+  z-index: 1000;
+}
+
+.button {
+  all: unset;
+  cursor: pointer;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+}

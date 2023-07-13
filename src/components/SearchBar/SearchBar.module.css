@@ -1,0 +1,25 @@
+.searchContainer {
+  width: 20%;
+  padding: 0 1rem;
+}
+
+.searchCaja {
+  display: flex;
+}
+
+.searchContainer input {
+  border: 0px;
+  border-radius: 10px 0px 0px 10px;
+  width: 50%;
+}
+
+.searchContainer button {
+  font-family: "Rick-and-Morty";
+  border: 0px;
+  border-radius: 0px 10px 10px 0;
+  color: white;
+  background-color: blueviolet;
+  width: 30%;
+  font-size: 14px;
+  cursor: pointer;
+}
