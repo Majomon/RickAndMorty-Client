@@ -1,38 +1,34 @@
 import {
-  FILTER_CARDS, GET_FAVORITES, ORDER_CARDS, REMOVE_FAVORITE
+  ADD_FAVORITES,
+  GET_FAVORITES,
+  REMOVE_FAVORITES,
+  FILTER_CARDS,
+  ORDER_CARDS,
 } from "./actions";
 
 const initialState = {
   myFavorites: [],
-  allCharacters: [],
 };
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    /*     case ADD_FAVORITE:
+    case GET_FAVORITES:
       return {
         ...state,
-        myFavorites: [...state.myFavorites, action.payload],
-        allCharacters: [...state.allCharacters, action.payload],
-      }; */
+        myFavorites: action.payload,
+      };
 
-    case REMOVE_FAVORITE:
-      const updatedAllCharacters = state.allCharacters.filter(
-        (char) => char.id !== action.payload
-      );
+    case ADD_FAVORITES:
+      return {
+        ...state,
+        myFavorites: action.payload,
+      };
+    case REMOVE_FAVORITES:
       return {
         ...state,
         myFavorites: state.myFavorites.filter(
           (char) => char.id !== action.payload
         ),
-        allCharacters: updatedAllCharacters,
-      };
-
-    case GET_FAVORITES:
-      return {
-        ...state,
-        myFavorites: action.payload,
-        allCharacters: action.payload,
       };
 
     case FILTER_CARDS:

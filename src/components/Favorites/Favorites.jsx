@@ -4,7 +4,7 @@ import { filterCards, orderCards } from "../../redux/actions";
 import Card from "../Card/Card";
 import styles from "./Favorites.module.css";
 
-function Favorites(props) {
+function Favorites() {
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.myFavorites);
 
@@ -22,7 +22,6 @@ function Favorites(props) {
 
   return (
     <div className={styles.cardContainer}>
-      {console.log(props.myFavorites)}
       <div>
         {/* select para ordenamiento */}
         <select name="order" onChange={(event) => handleOrderChange(event)}>
@@ -54,7 +53,6 @@ function Favorites(props) {
           </div>
         );
       })}
-      
     </div>
   );
 }
