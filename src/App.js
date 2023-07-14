@@ -50,7 +50,14 @@ function App() {
   const onSearch = (id) => {
     const URL_BASE = "https://rick-and-morty-api-gules.vercel.app/";
 
-    fetch(`${URL_BASE}/onsearch/${id}`)
+    fetch(`${URL_BASE}/onsearch/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin":
+          "https://rick-and-morty-client-vert.vercel.app",
+      },
+    })
       .then((response) => response.json())
       .then((data) => {
         if (data.name && !characters.find((char) => char.id === data.id)) {
