@@ -9,7 +9,7 @@ export const ORDER_CARDS = "ORDER_CARDS";
 /* export const addFavoriteGlobal = (character) => {
   return { type: ADD_FAVORITE, payload: character };
 }; */
-const URL_BASE = "https://rickapi.onrender.com";
+const URL_BASE = "https://rick-and-morty-api-indol-gamma.vercel.app/";
 
 export const getFavorites = () => {
   return async function (dispatch) {
