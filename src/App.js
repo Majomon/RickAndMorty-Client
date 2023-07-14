@@ -48,7 +48,7 @@ function App() {
   const password = "pass1234";
 
   const onSearch = (id) => {
-    const URL_BASE = "https://rick-and-morty-api-indol-gamma.vercel.app/";
+    const URL_BASE = "https://rick-and-morty-api-teal.vercel.app/";
 
     fetch(`${URL_BASE}/onsearch/${id}`)
       .then((response) => response.json())
